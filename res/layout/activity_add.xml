@@ -21,18 +21,18 @@
                 android:id="@+id/firstNameTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom|left"
+                android:gravity="center"
                 android:layout_margin="@dimen/item_margin"
                 android:text="@string/firstNameTitle"
-                android:textSize="@dimen/normal_text" 
-                />
+                android:textSize="@dimen/normal_text" />
 
             <EditText
                 android:id="@+id/firstNameValue"
-                android:layout_width="wrap_content"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom|center"
+                android:gravity="center"
                 android:layout_margin="@dimen/item_margin"
+                android:inputType="textPersonName"
                 android:textSize="@dimen/normal_text" />
         </LinearLayout>
 
@@ -47,17 +47,18 @@
                 android:id="@+id/lastNameTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom|left"
+                android:gravity="center"
                 android:layout_margin="@dimen/item_margin"
                 android:text="@string/lastNameTitle"
                 android:textSize="@dimen/normal_text" />
 
             <EditText
                 android:id="@+id/lastNameValue"
-                android:layout_width="wrap_content"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom|center"
+                android:gravity="center"
                 android:layout_margin="@dimen/item_margin"
+                android:inputType="textPersonName"
                 android:textSize="@dimen/normal_text" />
         </LinearLayout>
 
@@ -72,7 +73,7 @@
                 android:id="@+id/genderTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom|left"
+                android:gravity="center"
                 android:layout_margin="@dimen/item_margin"
                 android:text="@string/genderTitle"
                 android:textSize="@dimen/normal_text" />
@@ -97,7 +98,7 @@
                 android:id="@+id/ageTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom|left"
+                android:gravity="center"
                 android:layout_margin="@dimen/item_margin"
                 android:contentDescription="@string/ageTitle"
                 android:text="@string/ageTitle"
@@ -105,10 +106,11 @@
 
             <EditText
                 android:id="@+id/ageValue"
-                android:layout_width="wrap_content"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom|center"
+                android:gravity="center"
                 android:layout_margin="@dimen/item_margin"
+                android:inputType="number"
                 android:textSize="@dimen/normal_text" />
         </LinearLayout>
 
@@ -123,7 +125,7 @@
                 android:id="@+id/homeAddressTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom|left"
+                android:gravity="center"
                 android:layout_margin="@dimen/item_margin"
                 android:contentDescription="@string/ageTitle"
                 android:text="@string/homeAddressTitle"
@@ -131,10 +133,11 @@
 
             <EditText
                 android:id="@+id/homeAddressValue"
-                android:layout_width="wrap_content"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom|left"
+                android:gravity="center"
                 android:layout_margin="@dimen/item_margin"
+                android:inputType="textPostalAddress"
                 android:textSize="@dimen/normal_text" />
         </LinearLayout>
 
@@ -149,17 +152,18 @@
                 android:id="@+id/cityTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom|left"
+                android:gravity="center"
                 android:layout_margin="@dimen/item_margin"
                 android:text="@string/cityTitle"
                 android:textSize="@dimen/normal_text" />
 
             <EditText
                 android:id="@+id/cityNameValue"
-                android:layout_width="wrap_content"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom|center"
+                android:gravity="center"
                 android:layout_margin="@dimen/item_margin"
+                android:inputType="textPersonName"
                 android:textSize="@dimen/normal_text" />
         </LinearLayout>
 
@@ -174,7 +178,7 @@
                 android:id="@+id/stateTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom|left"
+                android:gravity="center"
                 android:layout_margin="@dimen/item_margin"
                 android:text="@string/stateTitle"
                 android:textSize="@dimen/normal_text" />
@@ -199,17 +203,19 @@
                 android:id="@+id/zipCodeTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom|left"
+                android:gravity="center"
                 android:layout_margin="@dimen/item_margin"
                 android:text="@string/zipCodeTitle"
                 android:textSize="@dimen/normal_text" />
 
             <EditText
                 android:id="@+id/zipCodeValue"
-                android:layout_width="wrap_content"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom|center"
+                android:gravity="center"
                 android:layout_margin="@dimen/item_margin"
+                android:inputType="phone"
+                android:maxLength="5"
                 android:textSize="@dimen/normal_text" />
         </LinearLayout>
 
@@ -224,19 +230,19 @@
                 android:id="@+id/phoneNumberTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom|left"
+                android:gravity="center"
                 android:layout_margin="@dimen/item_margin"
                 android:text="@string/phoneNumberTitle"
                 android:textSize="@dimen/normal_text" />
 
             <EditText
                 android:id="@+id/phoneNumberValue"
-                android:layout_width="wrap_content"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_margin="@dimen/item_margin"
                 android:inputType="phone"
                 android:maxLength="10"
-                android:layout_gravity="bottom|center"
-                android:layout_margin="@dimen/item_margin"
                 android:textSize="@dimen/normal_text" />
         </LinearLayout>
 
@@ -252,26 +258,23 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_margin="@dimen/item_margin"
                 android:layout_weight="0.3"
                 android:gravity="center"
-                android:layout_margin="@dimen/item_margin"
                 android:src="@drawable/ic_launcher" />
 
             <Button
                 android:id="@+id/addButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.7"
                 android:layout_gravity="center"
-                android:gravity="center"
                 android:layout_margin="@dimen/item_margin"
-                android:textSize="@dimen/normal_text" 
+                android:layout_weight="0.7"
+                android:gravity="center"
                 android:text="@string/addImageTitle"
-                />
+                android:textSize="@dimen/normal_text" />
         </LinearLayout>
 
-        
-        
         <LinearLayout
             android:id="@+id/actionLayout"
             android:layout_width="fill_parent"
@@ -283,32 +286,24 @@
                 android:id="@+id/saveButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.5"
                 android:layout_gravity="center"
-                android:gravity="center"
                 android:layout_margin="@dimen/item_margin"
-                android:textSize="@dimen/normal_text" 
+                android:layout_weight="0.5"
+                android:gravity="center"
                 android:text="@string/saveTitle"
-                />
-            
+                android:textSize="@dimen/normal_text" />
+
             <Button
                 android:id="@+id/cancelButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.5"
                 android:layout_gravity="center"
-                android:gravity="center"
                 android:layout_margin="@dimen/item_margin"
-                android:textSize="@dimen/normal_text" 
+                android:layout_weight="0.5"
+                android:gravity="center"
                 android:text="@string/cancelTitle"
-                />
-            
+                android:textSize="@dimen/normal_text" />
         </LinearLayout>
-        
-        
-        
-        
-        
-        </RelativeLayout>
+    </RelativeLayout>
 
 </ScrollView>

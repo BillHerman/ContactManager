@@ -15,15 +15,15 @@
 	<string name="weatherImageDescription">Weather Image</string>
 	
 	<!--  Titles -->
-	<string name="firstNameTitle">First Name: </string>
-	<string name="lastNameTitle">Last Name: </string>
-	<string name="genderTitle">Gender: </string>
-	<string name="ageTitle">Age: </string>
-	<string name="homeAddressTitle">Home Address: </string>
-	<string name="cityTitle">City: </string>
-	<string name="stateTitle">State: </string>
-	<string name="zipCodeTitle">Zip Code: </string>
-	<string name="phoneNumberTitle">Phone: </string>
+	<string name="firstNameTitle">First Name:</string>
+	<string name="lastNameTitle">Last Name:</string>
+	<string name="genderTitle">Gender:</string>
+	<string name="ageTitle">Age:</string>
+	<string name="homeAddressTitle">Home Address:</string>
+	<string name="cityTitle">City:</string>
+	<string name="stateTitle">State:</string>
+	<string name="zipCodeTitle">Zip Code:</string>
+	<string name="phoneNumberTitle">Phone:</string>
 	<string name="addImageTitle">Take Picture</string>
 	<string name="cancelTitle">Cancel</string>
 	<string name="saveTitle">Save</string>
