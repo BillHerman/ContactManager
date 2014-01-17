@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ContactManager</string>
+    <string name="add">Add New Contact</string>
+    
+    <!-- Descriptions -->
+    <string name="iconDescription">Name Icon</string>
+    <string name="lastNameDescription">Last Name</string>
+    <string name="firstNameDescription">First Name</string>
+    <string name="phoneNumberDescription">Phone Number</string>
+    <string name="weatherConstantDescription">Weather Degrees Farienheight</string>
+    <string name="weatherTempDescription">Weather Tempature</string>
+    <string name="weatherStatusDescription">Weather Status</string>
+	<string name="weatherImageDescription">Weather Image</string>
+	
+	<!--  Titles -->
+	<string name="firstNameTitle">First Name: </string>
+	<string name="lastNameTitle">Last Name: </string>
+	<string name="genderTitle">Gender: </string>
+	<string name="ageTitle">Age: </string>
+	<string name="homeAddressTitle">Home Address: </string>
+	<string name="cityTitle">City: </string>
+	<string name="stateTitle">State: </string>
+	<string name="zipCodeTitle">Zip Code: </string>
+	<string name="phoneNumberTitle">Phone: </string>
+	<string name="addImageTitle">Take Picture</string>
+	<string name="cancelTitle">Cancel</string>
+	<string name="saveTitle">Save</string>
+	
+	<!-- Constants -->
+	<string name="tempIndicator">F</string>
+	
+</resources>

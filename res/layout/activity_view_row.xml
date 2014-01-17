@@ -1,0 +1,93 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin" >
+
+    <LinearLayout
+        android:id="@+id/nameLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" >
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/item_margin"
+            android:contentDescription="@string/iconDescription"
+            android:src="@drawable/ic_launcher" />
+
+        <TextView
+            android:id="@+id/lastName"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/item_margin"
+            android:textSize="@dimen/normal_text" 
+            android:contentDescription="@string/lastNameDescription"
+            android:text="Last" />
+
+        <TextView
+            android:id="@+id/firstName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="@dimen/normal_text" 
+            android:layout_margin="@dimen/item_margin"
+            android:contentDescription="@string/firstNameDescription"
+            android:text="First" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/phoneNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nameLayout"
+        android:layout_margin="@dimen/item_margin"
+        android:textSize="@dimen/normal_text" 
+        android:contentDescription="@string/phoneNumberDescription"
+        android:text="4445559999" />
+
+    <LinearLayout
+        android:id="@+id/weatherLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/phoneNumber" >
+
+        <TextView
+            android:id="@+id/weatherStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+        	android:textSize="@dimen/normal_text" 
+            android:layout_margin="@dimen/item_margin"
+            android:contentDescription="@string/weatherStatusDescription"
+            />
+
+        <TextView
+            android:id="@+id/weatherTemp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="@dimen/normal_text" 
+        	android:layout_margin="@dimen/item_margin"
+            android:contentDescription="@string/weatherTempDescription"
+            />
+
+        <TextView
+            android:id="@+id/weatherConstant"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="@dimen/normal_text" 
+        	android:layout_height="wrap_content"
+            android:layout_margin="@dimen/item_margin"
+            android:contentDescription="@string/weatherConstantDescription"
+            android:text="@string/tempIndicator" />
+    </LinearLayout>
+
+</RelativeLayout>
