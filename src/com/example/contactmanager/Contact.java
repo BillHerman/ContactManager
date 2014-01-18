@@ -1,7 +1,10 @@
 package com.example.contactmanager;
 
+import android.util.Log;
+
 public class Contact {
 
+	private static final String TAG = "log";
 	private int id = 0;
 	private String firstName = "";
 	private String lastName = "";
@@ -139,7 +142,119 @@ public class Contact {
 		return weatherText;
 	}
 	
+
 	
+	
+
+	public boolean isValidId()
+	{
+		if (this.id >= 0)
+			return true;
+		else
+			return false;
+		
+	}
+
+	public boolean isValidFirstName()
+	{
+		if (this.firstName.length() > 0)
+			return true;
+		else 
+			return false;
+	}
+	
+	public boolean isValidLastName()
+	{
+		if (this.lastName.length() > 0)
+			return true;
+		else 
+			return false;
+	}
+	
+	public boolean isValidAddress()
+	{
+		if (this.address.length() > 0)
+			return true;
+		else 
+			return false;
+	}
+	
+	public boolean isValidAge()
+	{
+		Log.v(TAG,"isValidAge = " + this.age);
+		if (this.age >= 0 && this.age <= 100 )
+			return true;
+		else 
+			return false;
+	}
+	
+	public boolean isValidCity()
+	{
+		if (this.city.length() > 0)
+			return true;
+		else 
+			return false;
+	}
+	
+	public boolean isValidGender()
+	{
+		if (this.gender.length() > 0)
+			return true;
+		else 
+			return false;
+	}
+	
+	public boolean isValidPhoneNumber()
+	{
+		if (Long.toString(this.phoneNumber).length() == 10)
+			return true;
+		else
+			return false;
+	}
+	
+	public boolean isValidState()
+	{
+		if (this.state.length() > 0)
+			return true;
+		else 
+			return false;
+	}
+	
+	public boolean isValidZipCode()
+	{
+		if (Integer.toString(this.zipCode).length() == 5)
+			return true;
+		else
+			return false;
+	}
+	
+
+	public boolean isValidTempature()
+	{
+		if (this.tempature != - 999)
+			return true;
+		else
+			return false;
+	}
+	
+	public boolean isValidWeatherText()
+	{
+		if (this.weatherText.length() > 0)
+			return true;
+		else 
+			return false;
+	}
+	
+	public boolean isValidContact()
+	{
+		if (isValidZipCode() && isValidState() && isValidPhoneNumber() && isValidGender() && isValidCity() && isValidAge() && isValidAddress() && isValidLastName() && isValidFirstName())
+			return true;
+		else
+			return false;
+	
+	}
+
+
 	
 
 }
