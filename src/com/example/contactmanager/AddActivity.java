@@ -33,6 +33,7 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 public class AddActivity extends Activity {
 
@@ -56,11 +57,6 @@ public class AddActivity extends Activity {
 		ArrayAdapter<String> state_adapter = new ArrayAdapter<String>(this,R.layout.row, R.id.entry, stateArray);
 		state_spinner.setAdapter(state_adapter);
 			    
-	    
-	    
-
-		
-		
 		
 		// add camera picture
 		findViewById(R.id.addButton).setOnClickListener(onClickListener);
@@ -68,11 +64,10 @@ public class AddActivity extends Activity {
 		// save or exit
 		findViewById(R.id.saveButton).setOnClickListener(onClickListener);
 		findViewById(R.id.cancelButton).setOnClickListener(onClickListener);
-			
+		
 	}
-
-
-
+	
+	
 	final OnClickListener onClickListener = new OnClickListener() {
 		public void onClick(final View v) {
 			switch (v.getId()) {
