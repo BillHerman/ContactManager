@@ -1,28 +1,44 @@
 package com.example.contactmanager;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.OutputStream;
 import java.util.ArrayList;
 
 import android.content.ContentValues;
+import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Bitmap;
+import android.graphics.Bitmap.CompressFormat;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.util.Log;
+import android.widget.ImageView;
 
 public class ContactList {
 
 	private static final String TAG = "log";
 	private ArrayList<Contact> contacts = new ArrayList<Contact>();
 	SQLiteDatabase db;
-	int maxId = 0;
+	private int maxId = 0;
 	
 	public ContactList(SQLiteDatabase db)
 	{
 		this.db = db;
 	}
+	
+	public int getNextId()
+	{
+		return maxId;
+	}
+	
 	public void LoadContactList() {
 		Cursor c;
 		contacts = new ArrayList<Contact>();
 		Contact contact;
+		maxId = 0;
 		
 		try {
 			c = db.rawQuery("select * from contacts;", null);
@@ -53,7 +69,8 @@ public class ContactList {
 		catch (Exception e) {
 			Log.v(TAG,"error in ContactList = " + e.getMessage());
 		}
-
+		maxId++;
+		
 
 	}
 	
@@ -65,7 +82,7 @@ public class ContactList {
 	
 	
 
-	public void PushContact(Contact contact) {
+	public void PushContact(Contact contact, Bitmap avatar, Context context) {
 
 		ContentValues values = new ContentValues();
 
@@ -82,7 +99,6 @@ public class ContactList {
 			}
 
 			values.clear();
-			maxId++;
 			contact.setId(maxId);
 			values.put("id", contact.getId());
 			values.put("firstName", contact.getFirstName());
@@ -104,6 +120,42 @@ public class ContactList {
 	//		db.endTransaction();
 		}
 
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		String strAvatarFilename = "contactManager" + ViewActivity.contactList.getNextId() + ".jpg";
+		try {
+			OutputStream outputStream = context.openFileOutput(
+					strAvatarFilename, context.MODE_PRIVATE);
+			avatar.compress(CompressFormat.JPEG, 100, outputStream);
+
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		Uri imageUri = Uri.fromFile(new File(context.getFilesDir(),
+				strAvatarFilename));
+/*
+		ImageView addImage = (ImageView) findViewById(R.id.addImage);
+		addImage.setImageDrawable(getResources().getDrawable(
+				R.drawable.camera));
+		addImage.setImageURI(imageUri);
+*/
+		
+		
+		
+		
+		
+		
 	}
 	
 	
@@ -134,11 +186,11 @@ public class ContactList {
 		return contacts;
 	}
 	
-	public void AddContact(Contact contact)
+	public void AddContact(Contact contact, Bitmap bitmap, Context context)
 	{
 		contacts.add(contact);
 
-		PushContact(contact);
+		PushContact(contact, bitmap, context);
 		
 	}
 

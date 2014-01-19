@@ -43,6 +43,8 @@ public class AddActivity extends Activity {
 	protected static final String TAG = "log";
 	static final int TAKE_CAMERA_REQUEST = 1;
 	Context context;
+	Contact contact = new Contact();
+	Bitmap avatar;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -99,7 +101,6 @@ public class AddActivity extends Activity {
 				EditText zipCode = (EditText) findViewById(R.id.zipCodeValue);
 				EditText phone = (EditText) findViewById(R.id.phoneNumberValue);
 
-				Contact contact = new Contact();
 				contact.setFirstName(firstName.getText().toString());
 				contact.setLastName(lastName.getText().toString());
 				contact.setGender(gender.getSelectedItem().toString());
@@ -139,7 +140,7 @@ public class AddActivity extends Activity {
 							"Phone number must be ten digits long.");
 
 				if (!errorFound) {
-					ViewActivity.contactList.AddContact(contact);
+					ViewActivity.contactList.AddContact(contact, avatar, context);
 					finish();
 				}
 
@@ -156,7 +157,7 @@ public class AddActivity extends Activity {
 	private boolean SendError(boolean errorFound, String message) {
 
 		if (!errorFound) {
-		
+
 			AlertDialog.Builder builder = new AlertDialog.Builder(
 					AddActivity.this);
 			builder.setMessage(message)
@@ -201,31 +202,30 @@ public class AddActivity extends Activity {
 		switch (requestCode) {
 		case TAKE_CAMERA_REQUEST:
 			if (resultCode == Activity.RESULT_OK) {
-				Bitmap cameraPic = (Bitmap) data.getExtras().get("data");
-				SaveAvatar(cameraPic);
+				avatar = (Bitmap) data.getExtras().get("data");
+				String strAvatarFilename = "avatar.jpg";
+				
+				try {
+					OutputStream outputStream = openFileOutput(
+							strAvatarFilename, MODE_PRIVATE);
+					avatar.compress(CompressFormat.JPEG, 100, outputStream);
+
+				} catch (FileNotFoundException e) {
+					e.printStackTrace();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+				Uri imageUri = Uri.fromFile(new File(getFilesDir(),
+						strAvatarFilename));
+
+				ImageView addImage = (ImageView) findViewById(R.id.addImage);
+				addImage.setImageDrawable(getResources().getDrawable(
+						R.drawable.camera));
+				addImage.setImageURI(imageUri);
+
 			}
 			break;
 		}
-	}
-
-	private void SaveAvatar(Bitmap avatar) {
-		String strAvatarFilename = "avatar.jpg";
-		try {
-			OutputStream outputStream = openFileOutput(strAvatarFilename,
-					MODE_PRIVATE);
-			avatar.compress(CompressFormat.JPEG, 100, outputStream);
-
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		Uri imageUri = Uri.fromFile(new File(getFilesDir(), strAvatarFilename));
-
-		ImageView addImage = (ImageView) findViewById(R.id.addImage);
-		addImage.setImageDrawable(getResources().getDrawable(R.drawable.camera));
-		addImage.setImageURI(imageUri);
-	
 	}
 
 }

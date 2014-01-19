@@ -1,5 +1,6 @@
 package com.example.contactmanager;
 
+import android.graphics.Bitmap;
 import android.util.Log;
 
 public class Contact {
@@ -15,9 +16,7 @@ public class Contact {
 	private String address = "";
 	private String city = "";
 	private String state = "";
-	private int tempature = -999;
-	private String weatherText = "";
-	
+//	private Bitmap bitmap;
 	
 	public void setId(int id)
 	{
@@ -69,15 +68,15 @@ public class Contact {
 		this.zipCode = zipCode;
 	}
 	
-	public void setTempature(int tempature)
+/*
+	public void setBitmap(Bitmap bitmap)
 	{
-		this.tempature = tempature;
+		this.bitmap = bitmap;
 	}
 	
-	public void setWeatherText(String weatherText)
-	{
-		this.weatherText = weatherText;
-	}
+	*/
+	
+	
 	
 	
 	
@@ -130,19 +129,14 @@ public class Contact {
 	{
 		return zipCode;
 	}
-	
-
-	public int getTempature()
+/*
+	public Bitmap getBitmap()
 	{
-		return tempature;
+		return bitmap;
 	}
-	
-	public String getWeatherText()
-	{
-		return weatherText;
-	}
-	
+*/	
 
+	
 	
 	
 
@@ -227,31 +221,6 @@ public class Contact {
 			return false;
 	}
 	
-
-	public boolean isValidTempature()
-	{
-		if (this.tempature != - 999)
-			return true;
-		else
-			return false;
-	}
-	
-	public boolean isValidWeatherText()
-	{
-		if (this.weatherText.length() > 0)
-			return true;
-		else 
-			return false;
-	}
-	
-	public boolean isValidContact()
-	{
-		if (isValidZipCode() && isValidState() && isValidPhoneNumber() && isValidGender() && isValidCity() && isValidAge() && isValidAddress() && isValidLastName() && isValidFirstName())
-			return true;
-		else
-			return false;
-	
-	}
 
 
 	

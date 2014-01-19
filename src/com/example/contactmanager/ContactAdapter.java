@@ -1,8 +1,14 @@
 package com.example.contactmanager;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.OutputStream;
 import java.util.ArrayList;
 
 import android.content.Context;
+import android.graphics.Bitmap.CompressFormat;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -101,7 +107,32 @@ public class ContactAdapter extends BaseAdapter {
 		holder.phoneNumber.setText(Long.toString(contacts.get(position)
 				.getPhoneNumber()));
 		
-		Log.v(TAG,"Previous value = " + holder.weatherStatus.getText().toString());
+		
+		
+		
+		
+		
+	
+		
+		String strAvatarFilename = "contactManager" + contacts.get(position).getId() + ".jpg";
+	
+		
+
+		Uri imageUri = Uri.fromFile(new File(context.getFilesDir(),
+				strAvatarFilename));
+
+		holder.icon = (ImageView) convertView.findViewById(R.id.icon);
+		holder.icon.setImageDrawable(context.getResources().getDrawable(
+				R.drawable.camera));
+		holder.icon.setImageURI(imageUri);
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		WeatherHelper weatherHelper;
 		weatherHelper = new WeatherHelper(holder.weatherStatus,	holder.weatherTemp, holder.weatherConstant);
