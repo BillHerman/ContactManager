@@ -82,7 +82,8 @@ public class ContactList {
 			}
 
 			values.clear();
-			contact.setId(maxId + 1);
+			maxId++;
+			contact.setId(maxId);
 			values.put("id", contact.getId());
 			values.put("firstName", contact.getFirstName());
 			values.put("lastName", contact.getLastName());
@@ -110,11 +111,10 @@ public class ContactList {
 	{
 		
 		Cursor c;
-		Log.v(TAG,"delete id = "+ id);
 		try {
-			c = db.rawQuery("delete from contacts where id=" + id + ";", null);
+			String selectString = "delete from contacts where id = " + id + ";";
+			c = db.rawQuery(selectString, null);
 			int count = c.getCount();
-			Log.v(TAG,"delet count = " + count);
 		}
 		catch (Exception e) {
 			Log.v(TAG,"error in delete ContactList = " + e.getMessage());

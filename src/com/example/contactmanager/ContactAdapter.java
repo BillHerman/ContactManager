@@ -63,6 +63,8 @@ public class ContactAdapter extends BaseAdapter {
 		convertView = layoutInflater.inflate(R.layout.activity_view_row, null);
 
 		convertView.setId(position);
+		convertView.setTag(contacts.get(position).getId());
+		
 		holder = new ViewHolder();
 
 		// set up fields
@@ -85,6 +87,10 @@ public class ContactAdapter extends BaseAdapter {
 		holder.weatherTemp = (TextView) convertView
 				.findViewById(R.id.weatherTemp);
 
+		holder.weatherConstant = (TextView) convertView
+				.findViewById(R.id.weatherConstant);
+
+		
 		// update fields
 
 		holder.firstName.setText(this.contacts.get(position).getFirstName());
@@ -94,16 +100,13 @@ public class ContactAdapter extends BaseAdapter {
 		holder.lastName.setText(this.contacts.get(position).getLastName());
 		holder.phoneNumber.setText(Long.toString(contacts.get(position)
 				.getPhoneNumber()));
-
-		// holder.weatherConstant.setText("F");
-
-		// holder.weatherTemp.setText("");
-
+		
+		Log.v(TAG,"Previous value = " + holder.weatherStatus.getText().toString());
+		
 		WeatherHelper weatherHelper;
-		weatherHelper = new WeatherHelper(holder.weatherStatus,
-				holder.weatherTemp);
+		weatherHelper = new WeatherHelper(holder.weatherStatus,	holder.weatherTemp, holder.weatherConstant);
 		weatherHelper.execute(this.contacts.get(position).getZipCode());
-
+		
 		return convertView;
 	}
 

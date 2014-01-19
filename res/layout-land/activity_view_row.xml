@@ -44,9 +44,9 @@
             android:id="@+id/phoneNumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_margin="@dimen/item_margin"
             android:contentDescription="@string/phoneNumberDescription"
-            android:layout_gravity="center"
             android:textSize="@dimen/normal_text" />
 
         <TextView
@@ -75,7 +75,8 @@
             android:layout_margin="@dimen/item_margin"
             android:contentDescription="@string/weatherConstantDescription"
             android:text="@string/tempIndicator"
-            android:textSize="@dimen/normal_text" />
+            android:textSize="@dimen/normal_text"
+            android:visibility="invisible" />
     </LinearLayout>
 
 </RelativeLayout>

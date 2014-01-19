@@ -16,8 +16,8 @@
         <ImageView
             android:id="@+id/icon"
             android:layout_width="wrap_content"
-            android:layout_gravity="center"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_margin="@dimen/item_margin"
             android:contentDescription="@string/iconDescription"
             android:src="@drawable/ic_launcher" />
@@ -25,22 +25,22 @@
         <TextView
             android:id="@+id/lastName"
             android:layout_width="wrap_content"
-            android:layout_gravity="center"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_margin="@dimen/item_margin"
-            android:textSize="@dimen/normal_text" 
             android:contentDescription="@string/lastNameDescription"
-            android:text="Last" />
+            android:text="Last"
+            android:textSize="@dimen/normal_text" />
 
         <TextView
             android:id="@+id/firstName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textSize="@dimen/normal_text" 
             android:layout_margin="@dimen/item_margin"
             android:contentDescription="@string/firstNameDescription"
-            android:text="First" />
+            android:text="First"
+            android:textSize="@dimen/normal_text" />
     </LinearLayout>
 
     <TextView
@@ -49,9 +49,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/nameLayout"
         android:layout_margin="@dimen/item_margin"
-        android:textSize="@dimen/normal_text" 
         android:contentDescription="@string/phoneNumberDescription"
-        android:text="4445559999" />
+        android:text="4445559999"
+        android:textSize="@dimen/normal_text" />
 
     <LinearLayout
         android:id="@+id/weatherLayout"
@@ -64,30 +64,30 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-        	android:textSize="@dimen/normal_text" 
             android:layout_margin="@dimen/item_margin"
             android:contentDescription="@string/weatherStatusDescription"
-            />
+            android:textSize="@dimen/normal_text" />
 
         <TextView
             android:id="@+id/weatherTemp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textSize="@dimen/normal_text" 
-        	android:layout_margin="@dimen/item_margin"
+            android:layout_margin="@dimen/item_margin"
             android:contentDescription="@string/weatherTempDescription"
-            />
+            android:textSize="@dimen/normal_text" />
 
         <TextView
             android:id="@+id/weatherConstant"
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textSize="@dimen/normal_text" 
-        	android:layout_height="wrap_content"
             android:layout_margin="@dimen/item_margin"
             android:contentDescription="@string/weatherConstantDescription"
-            android:text="@string/tempIndicator" />
+            android:textSize="@dimen/normal_text"
+            android:text="@string/tempIndicator"
+            android:visibility="invisible"
+            />"
     </LinearLayout>
 
 </RelativeLayout>

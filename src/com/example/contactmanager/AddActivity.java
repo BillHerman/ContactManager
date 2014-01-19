@@ -80,7 +80,6 @@ public class AddActivity extends Activity {
 			switch (v.getId()) {
 
 			case R.id.addButton:
-				Log.v(TAG, "short addButton pressed");
 
 				Intent pictureIntent = new Intent(
 						android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
@@ -89,7 +88,6 @@ public class AddActivity extends Activity {
 				break;
 
 			case R.id.saveButton:
-				Log.v(TAG, "saveButton pressed");
 
 				EditText firstName = (EditText) findViewById(R.id.firstNameValue);
 				EditText lastName = (EditText) findViewById(R.id.lastNameValue);
@@ -158,8 +156,7 @@ public class AddActivity extends Activity {
 	private boolean SendError(boolean errorFound, String message) {
 
 		if (!errorFound) {
-			Log.v(TAG, message);
-
+		
 			AlertDialog.Builder builder = new AlertDialog.Builder(
 					AddActivity.this);
 			builder.setMessage(message)
@@ -205,7 +202,6 @@ public class AddActivity extends Activity {
 		case TAKE_CAMERA_REQUEST:
 			if (resultCode == Activity.RESULT_OK) {
 				Bitmap cameraPic = (Bitmap) data.getExtras().get("data");
-				Log.v(TAG, "camera result okay");
 				SaveAvatar(cameraPic);
 			}
 			break;
@@ -213,7 +209,6 @@ public class AddActivity extends Activity {
 	}
 
 	private void SaveAvatar(Bitmap avatar) {
-		Log.v(TAG, "running SAVE AVATAR");
 		String strAvatarFilename = "avatar.jpg";
 		try {
 			OutputStream outputStream = openFileOutput(strAvatarFilename,
@@ -223,7 +218,6 @@ public class AddActivity extends Activity {
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
-			Log.v(TAG, "i/o exception");
 			e.printStackTrace();
 		}
 		Uri imageUri = Uri.fromFile(new File(getFilesDir(), strAvatarFilename));
@@ -231,63 +225,7 @@ public class AddActivity extends Activity {
 		ImageView addImage = (ImageView) findViewById(R.id.addImage);
 		addImage.setImageDrawable(getResources().getDrawable(R.drawable.camera));
 		addImage.setImageURI(imageUri);
-		Log.v(TAG, "finishedSAVE AVATAR");
-
+	
 	}
-
-	/*
-	 * 
-	 * public void Pull(String url) {
-	 * 
-	 * HttpClient client = new DefaultHttpClient();
-	 * HttpConnectionParams.setConnectionTimeout(client.getParams(), 10000);
-	 * HttpResponse response;
-	 * 
-	 * try { HttpGet get = new HttpGet(url); response = client.execute(get);
-	 * 
-	 * 
-	 * if (response != null) {
-	 * 
-	 * HttpEntity entity = response.getEntity(); String responseText =
-	 * EntityUtils.toString(entity);
-	 * 
-	 * JSONObject json = new JSONObject(); JSONArray ja = new
-	 * JSONArray(responseText);
-	 * 
-	 * 
-	 * 
-	 * 
-	 * 
-	 * 
-	 * for (int i = 0; i < ja.length(); i++) { json = ja.getJSONObject(i);
-	 * values.clear(); String oid = json.get("oid").toString();
-	 * values.put("cid", json.get("cid").toString()); values.put("date",
-	 * json.get("date").toString()); values.put("oid", oid);
-	 * db.insertOrThrow("orderHeader", null, values); JSONArray jaProduct = new
-	 * JSONArray(json.get("products").toString()); for (int j = 0; j <
-	 * jaProduct.length(); j++) { json = jaProduct.getJSONObject(j);
-	 * values.clear(); values.put("oid", oid); values.put("upc",
-	 * json.get("upc").toString()); values.put("quantity",
-	 * json.get("quantity").toString()); values.put("detail",
-	 * json.get("detail").toString()); values.put("leadTime",
-	 * json.get("leadTime").toString()); values.put("location",
-	 * json.get("location").toString()); values.put("name",
-	 * json.get("name").toString()); values.put("owner",
-	 * json.get("owner").toString()); JSONObject jsonSupplier = new
-	 * JSONObject(json.get("supplier").toString()); values.put("supplierId",
-	 * jsonSupplier.get("id").toString()); values.put("supplierAddress",
-	 * jsonSupplier.get("address").toString()); values.put("supplierBusiness",
-	 * jsonSupplier.get("business").toString()); values.put("supplierName",
-	 * jsonSupplier.get("name").toString()); values.put("supplierPrice",
-	 * jsonSupplier.get("price").toString()); db.insertOrThrow("orderDetail",
-	 * null, values); } } db.setTransactionSuccessful(); } catch (Exception e) {
-	 * Log.v("log", "Exception: OrderList: Pull(): values = " + e.toString());
-	 * }finally { db.endTransaction(); }
-	 * 
-	 * } } catch (Exception e) { Log.v("log",
-	 * "Exception: orderList: Pull(): insert = " + e.toString()); }
-	 * 
-	 * }
-	 */
 
 }

@@ -181,7 +181,6 @@ public class Contact {
 	
 	public boolean isValidAge()
 	{
-		Log.v(TAG,"isValidAge = " + this.age);
 		if (this.age >= 0 && this.age <= 100 )
 			return true;
 		else 

@@ -29,6 +29,7 @@ public class ViewActivity extends Activity {
 	ContactAdapter listAdapter;
 	SQLiteDatabase db;
 	Context context;
+	String searchString = "";
 
 	@Override
 	protected void onResume() {
@@ -49,7 +50,8 @@ public class ViewActivity extends Activity {
 		contacts = contactList.GetContactList();
 
 		final ListView listView = (ListView) findViewById(R.id.list);
-		listAdapter = new ContactAdapter(contacts, this, "");
+		searchString = "";
+		listAdapter = new ContactAdapter(contacts, this, searchString);
 		listView.setAdapter(listAdapter);
 
 		listView.setOnItemLongClickListener(new OnItemLongClickListener() {
@@ -57,10 +59,9 @@ public class ViewActivity extends Activity {
 			@Override
 			public boolean onItemLongClick(AdapterView<?> viewParent,
 					View view, int position, long id) {
-
-				contactList.DeleteContactById(contacts.get(position).getId());
+				contactList.DeleteContactById((Integer)view.getTag());
 				contacts = contactList.GetContactList();
-				listAdapter = new ContactAdapter(contacts, context, "");
+				listAdapter = new ContactAdapter(contacts, context, searchString);
 				listView.setAdapter(listAdapter);
 
 				return false;
@@ -73,8 +74,8 @@ public class ViewActivity extends Activity {
 			@Override
 			public void onTextChanged(CharSequence s, int start, int before,
 					int count) {
-				Log.v(TAG,"onTextChanged = " + s.toString());
-				listAdapter = new ContactAdapter(contacts, context, s.toString());
+				searchString = s.toString();
+				listAdapter = new ContactAdapter(contacts, context, searchString);
 				listView.setAdapter(listAdapter);
 
 			
@@ -83,12 +84,10 @@ public class ViewActivity extends Activity {
 			@Override
 			public void beforeTextChanged(CharSequence s, int start, int count,
 					int after) {
-				Log.v(TAG,"beforeTextChanged = " + s);
 			}
 
 			@Override
 			public void afterTextChanged(Editable s) {
-				Log.v(TAG,"afterTextChanged = " + s);
 			}
 		});
 
@@ -103,11 +102,9 @@ public class ViewActivity extends Activity {
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		Log.v(TAG, "begin1 itemid = " + item.getItemId());
 		switch (item.getItemId()) {
 
 		case R.id.addItem:
-			Log.v(TAG, "begin2");
 			startActivity(new Intent(this, AddActivity.class));
 			return true;
 		default:

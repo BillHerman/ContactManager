@@ -32,14 +32,16 @@ import android.widget.TextView;
 	private static final String TAG = "log";
 		TextView textView1;
 		TextView textView2;
+		TextView textView3;
 		Integer tempature = -999;
 		String weatherText = "";
 		Integer zipCode = 0;
 		
-		public WeatherHelper(TextView textView1, TextView textView2) { 
+		public WeatherHelper(TextView textView1, TextView textView2, TextView textView3) { 
 		this.textView1 = textView1;
 		this.textView2 = textView2;
-		}
+		this.textView3 = textView3;
+			}
 
 		@Override
 		protected Integer doInBackground(Integer... params) {
@@ -51,7 +53,7 @@ import android.widget.TextView;
 	
 	
 	     protected void onPostExecute(Integer result) {
-	     
+	
 	    		if (textView1 != null) {
 					textView1.setText(weatherText);
 				}
@@ -59,7 +61,10 @@ import android.widget.TextView;
 	    		if (textView2 != null) {
 					textView2.setText(tempature.toString());
 				}
-			 
+
+	    		if (textView3 != null) {
+					textView3.setVisibility(View.VISIBLE);
+				}
 	     
 	     }
 
@@ -91,7 +96,7 @@ import android.widget.TextView;
 	 			}
 	 		} catch (Exception e) {
 	 			Log.v("log",
-	 					"Exception: message = "
+	 					"Exception: download message = "
 	 							+ e.toString());
 	 		} 
 	 	}
