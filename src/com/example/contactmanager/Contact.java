@@ -1,11 +1,7 @@
 package com.example.contactmanager;
 
-import android.graphics.Bitmap;
-import android.util.Log;
-
 public class Contact {
 
-	private static final String TAG = "log";
 	private int id = 0;
 	private String firstName = "";
 	private String lastName = "";
@@ -16,7 +12,6 @@ public class Contact {
 	private String address = "";
 	private String city = "";
 	private String state = "";
-//	private Bitmap bitmap;
 	
 	public void setId(int id)
 	{
@@ -67,14 +62,6 @@ public class Contact {
 	{
 		this.zipCode = zipCode;
 	}
-	
-/*
-	public void setBitmap(Bitmap bitmap)
-	{
-		this.bitmap = bitmap;
-	}
-	
-	*/
 	
 	
 	
@@ -129,12 +116,6 @@ public class Contact {
 	{
 		return zipCode;
 	}
-/*
-	public Bitmap getBitmap()
-	{
-		return bitmap;
-	}
-*/	
 
 	
 	
@@ -207,10 +188,10 @@ public class Contact {
 	
 	public boolean isValidState()
 	{
-		if (this.state.length() > 0)
-			return true;
-		else 
+		if (this.state.length() > 2)
 			return false;
+		else 
+			return true;
 	}
 	
 	public boolean isValidZipCode()

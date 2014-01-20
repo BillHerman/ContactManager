@@ -14,6 +14,10 @@ public final class R {
     }
     public static final class attr {
     }
+    public static final class color {
+        public static final int blueDark=0x7f050001;
+        public static final int blueLight=0x7f050000;
+    }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
 
@@ -21,68 +25,69 @@ public final class R {
          screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
     
          */
-        public static final int activity_horizontal_margin=0x7f050000;
-        public static final int activity_vertical_margin=0x7f050001;
+        public static final int activity_horizontal_margin=0x7f060000;
+        public static final int activity_vertical_margin=0x7f060001;
         /**  item specific values 
          */
-        public static final int item_margin=0x7f050002;
-        public static final int normal_text=0x7f050003;
+        public static final int item_margin=0x7f060002;
+        public static final int normal_text=0x7f060003;
     }
     public static final class drawable {
-        public static final int camera=0x7f020000;
+        public static final int blue_gradient=0x7f020000;
         public static final int ic_launcher=0x7f020001;
-        public static final int visa=0x7f020002;
+        public static final int personal=0x7f020002;
+        public static final int visa=0x7f020003;
     }
     public static final class id {
-        public static final int actionLayout=0x7f09001e;
-        public static final int addButton=0x7f09001d;
-        public static final int addImage=0x7f09001c;
-        public static final int addImageLayout=0x7f09001b;
-        public static final int addItem=0x7f090030;
-        public static final int ageLayout=0x7f090009;
-        public static final int ageTitle=0x7f09000a;
-        public static final int ageValue=0x7f09000b;
-        public static final int cancelButton=0x7f090020;
-        public static final int cityLayout=0x7f09000f;
-        public static final int cityNameValue=0x7f090011;
-        public static final int cityTitle=0x7f090010;
-        public static final int entry=0x7f09002f;
-        public static final int firstName=0x7f090028;
-        public static final int firstNameLayout=0x7f090000;
-        public static final int firstNameTitle=0x7f090001;
-        public static final int firstNameValue=0x7f090002;
-        public static final int genderAgeLayout=0x7f090022;
-        public static final int genderLayout=0x7f090006;
-        public static final int genderTitle=0x7f090007;
-        public static final int genderValue=0x7f090008;
-        public static final int homeAddressLayout=0x7f09000c;
-        public static final int homeAddressTitle=0x7f09000d;
-        public static final int homeAddressValue=0x7f09000e;
-        public static final int icon=0x7f090026;
-        public static final int lastName=0x7f090027;
-        public static final int lastNameLayout=0x7f090003;
-        public static final int lastNameTitle=0x7f090004;
-        public static final int lastNameValue=0x7f090005;
-        public static final int list=0x7f090024;
-        public static final int nameLayout=0x7f090025;
-        public static final int phoneNumber=0x7f090029;
-        public static final int phoneNumberLayout=0x7f090018;
-        public static final int phoneNumberTitle=0x7f090019;
-        public static final int phoneNumberValue=0x7f09001a;
-        public static final int saveButton=0x7f09001f;
-        public static final int searchLastName=0x7f090023;
-        public static final int singleLayout=0x7f09002e;
-        public static final int stateLayout=0x7f090012;
-        public static final int stateTitle=0x7f090013;
-        public static final int stateValue=0x7f090014;
-        public static final int stateZipCodeLayout=0x7f090021;
-        public static final int weatherConstant=0x7f09002d;
-        public static final int weatherLayout=0x7f09002a;
-        public static final int weatherStatus=0x7f09002b;
-        public static final int weatherTemp=0x7f09002c;
-        public static final int zipCodeLayout=0x7f090015;
-        public static final int zipCodeTitle=0x7f090016;
-        public static final int zipCodeValue=0x7f090017;
+        public static final int actionLayout=0x7f0a001e;
+        public static final int addButton=0x7f0a001d;
+        public static final int addImage=0x7f0a001c;
+        public static final int addImageLayout=0x7f0a001b;
+        public static final int addItem=0x7f0a0030;
+        public static final int ageLayout=0x7f0a0009;
+        public static final int ageTitle=0x7f0a000a;
+        public static final int ageValue=0x7f0a000b;
+        public static final int cancelButton=0x7f0a0020;
+        public static final int cityLayout=0x7f0a000f;
+        public static final int cityNameValue=0x7f0a0011;
+        public static final int cityTitle=0x7f0a0010;
+        public static final int entry=0x7f0a002f;
+        public static final int firstName=0x7f0a0028;
+        public static final int firstNameLayout=0x7f0a0000;
+        public static final int firstNameTitle=0x7f0a0001;
+        public static final int firstNameValue=0x7f0a0002;
+        public static final int genderAgeLayout=0x7f0a0022;
+        public static final int genderLayout=0x7f0a0006;
+        public static final int genderTitle=0x7f0a0007;
+        public static final int genderValue=0x7f0a0008;
+        public static final int homeAddressLayout=0x7f0a000c;
+        public static final int homeAddressTitle=0x7f0a000d;
+        public static final int homeAddressValue=0x7f0a000e;
+        public static final int icon=0x7f0a0026;
+        public static final int lastName=0x7f0a0027;
+        public static final int lastNameLayout=0x7f0a0003;
+        public static final int lastNameTitle=0x7f0a0004;
+        public static final int lastNameValue=0x7f0a0005;
+        public static final int list=0x7f0a0024;
+        public static final int nameLayout=0x7f0a0025;
+        public static final int phoneNumber=0x7f0a0029;
+        public static final int phoneNumberLayout=0x7f0a0018;
+        public static final int phoneNumberTitle=0x7f0a0019;
+        public static final int phoneNumberValue=0x7f0a001a;
+        public static final int saveButton=0x7f0a001f;
+        public static final int searchLastName=0x7f0a0023;
+        public static final int stateLayout=0x7f0a0012;
+        public static final int stateTitle=0x7f0a0013;
+        public static final int stateValue=0x7f0a0014;
+        public static final int stateZipCodeLayout=0x7f0a0021;
+        public static final int textLayout=0x7f0a002e;
+        public static final int weatherConstant=0x7f0a002d;
+        public static final int weatherLayout=0x7f0a002a;
+        public static final int weatherStatus=0x7f0a002b;
+        public static final int weatherTemp=0x7f0a002c;
+        public static final int zipCodeLayout=0x7f0a0015;
+        public static final int zipCodeTitle=0x7f0a0016;
+        public static final int zipCodeValue=0x7f0a0017;
     }
     public static final class layout {
         public static final int activity_add=0x7f030000;
@@ -91,38 +96,38 @@ public final class R {
         public static final int row=0x7f030003;
     }
     public static final class menu {
-        public static final int list=0x7f080000;
+        public static final int list=0x7f090000;
     }
     public static final class string {
-        public static final int add=0x7f060001;
-        public static final int addImageTitle=0x7f060013;
-        public static final int ageTitle=0x7f06000d;
-        public static final int app_name=0x7f060000;
-        public static final int cancelTitle=0x7f060014;
-        public static final int cityTitle=0x7f06000f;
-        public static final int firstNameDescription=0x7f060004;
+        public static final int add=0x7f070001;
+        public static final int addImageTitle=0x7f070013;
+        public static final int ageTitle=0x7f07000d;
+        public static final int app_name=0x7f070000;
+        public static final int cancelTitle=0x7f070014;
+        public static final int cityTitle=0x7f07000f;
+        public static final int firstNameDescription=0x7f070004;
         /**   Titles 
          */
-        public static final int firstNameTitle=0x7f06000a;
-        public static final int genderTitle=0x7f06000c;
-        public static final int homeAddressTitle=0x7f06000e;
+        public static final int firstNameTitle=0x7f07000a;
+        public static final int genderTitle=0x7f07000c;
+        public static final int homeAddressTitle=0x7f07000e;
         /**  Descriptions 
          */
-        public static final int iconDescription=0x7f060002;
-        public static final int lastNameDescription=0x7f060003;
-        public static final int lastNameTitle=0x7f06000b;
-        public static final int phoneNumberDescription=0x7f060005;
-        public static final int phoneNumberTitle=0x7f060012;
-        public static final int saveTitle=0x7f060015;
-        public static final int stateTitle=0x7f060010;
+        public static final int iconDescription=0x7f070002;
+        public static final int lastNameDescription=0x7f070003;
+        public static final int lastNameTitle=0x7f07000b;
+        public static final int phoneNumberDescription=0x7f070005;
+        public static final int phoneNumberTitle=0x7f070012;
+        public static final int saveTitle=0x7f070015;
+        public static final int stateTitle=0x7f070010;
         /**  Constants 
          */
-        public static final int tempIndicator=0x7f060016;
-        public static final int weatherConstantDescription=0x7f060006;
-        public static final int weatherImageDescription=0x7f060009;
-        public static final int weatherStatusDescription=0x7f060008;
-        public static final int weatherTempDescription=0x7f060007;
-        public static final int zipCodeTitle=0x7f060011;
+        public static final int tempIndicator=0x7f070016;
+        public static final int weatherConstantDescription=0x7f070006;
+        public static final int weatherImageDescription=0x7f070009;
+        public static final int weatherStatusDescription=0x7f070008;
+        public static final int weatherTempDescription=0x7f070007;
+        public static final int zipCodeTitle=0x7f070011;
     }
     public static final class style {
         /** 
@@ -146,10 +151,10 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f070000;
+        public static final int AppBaseTheme=0x7f080000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f070001;
+        public static final int AppTheme=0x7f080001;
     }
 }

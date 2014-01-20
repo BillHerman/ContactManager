@@ -21,8 +21,8 @@
                 android:id="@+id/firstNameTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:layout_margin="@dimen/item_margin"
+                android:gravity="center"
                 android:text="@string/firstNameTitle"
                 android:textSize="@dimen/normal_text" />
 
@@ -30,12 +30,11 @@
                 android:id="@+id/firstNameValue"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:gravity="left"
                 android:layout_margin="@dimen/item_margin"
+                android:gravity="center"
                 android:inputType="textPersonName"
-                android:textSize="@dimen/normal_text" 
-                >
-               </EditText>
+                android:textSize="@dimen/normal_text" >
+            </EditText>
         </LinearLayout>
 
         <LinearLayout
@@ -49,8 +48,8 @@
                 android:id="@+id/lastNameTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:layout_margin="@dimen/item_margin"
+                android:gravity="center"
                 android:text="@string/lastNameTitle"
                 android:textSize="@dimen/normal_text" />
 
@@ -58,11 +57,11 @@
                 android:id="@+id/lastNameValue"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:layout_margin="@dimen/item_margin"
+                android:gravity="center"
                 android:inputType="textPersonName"
                 android:textSize="@dimen/normal_text" >
-              </EditText>
+            </EditText>
         </LinearLayout>
 
         <LinearLayout
@@ -76,8 +75,8 @@
                 android:id="@+id/genderTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:layout_margin="@dimen/item_margin"
+                android:gravity="center"
                 android:text="@string/genderTitle"
                 android:textSize="@dimen/normal_text" />
 
@@ -85,7 +84,7 @@
                 android:id="@+id/genderValue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom|center"
+                android:gravity="center"
                 android:layout_margin="@dimen/item_margin"
                 android:textSize="@dimen/normal_text" />
         </LinearLayout>
@@ -101,9 +100,9 @@
                 android:id="@+id/ageTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:layout_margin="@dimen/item_margin"
                 android:contentDescription="@string/ageTitle"
+                android:gravity="center"
                 android:text="@string/ageTitle"
                 android:textSize="@dimen/normal_text" />
 
@@ -111,8 +110,9 @@
                 android:id="@+id/ageValue"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:layout_margin="@dimen/item_margin"
+                android:maxLength="3"
+                android:gravity="center"
                 android:inputType="number"
                 android:textSize="@dimen/normal_text" />
         </LinearLayout>
@@ -128,9 +128,9 @@
                 android:id="@+id/homeAddressTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:layout_margin="@dimen/item_margin"
                 android:contentDescription="@string/ageTitle"
+                android:gravity="center"
                 android:text="@string/homeAddressTitle"
                 android:textSize="@dimen/normal_text" />
 
@@ -138,8 +138,8 @@
                 android:id="@+id/homeAddressValue"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:layout_margin="@dimen/item_margin"
+                android:gravity="center"
                 android:inputType="textPostalAddress"
                 android:textSize="@dimen/normal_text" />
         </LinearLayout>
@@ -155,8 +155,8 @@
                 android:id="@+id/cityTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:layout_margin="@dimen/item_margin"
+                android:gravity="center"
                 android:text="@string/cityTitle"
                 android:textSize="@dimen/normal_text" />
 
@@ -164,8 +164,8 @@
                 android:id="@+id/cityNameValue"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:layout_margin="@dimen/item_margin"
+                android:gravity="center"
                 android:inputType="textPersonName"
                 android:textSize="@dimen/normal_text" />
         </LinearLayout>
@@ -181,8 +181,8 @@
                 android:id="@+id/stateTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:layout_margin="@dimen/item_margin"
+                android:gravity="center"
                 android:text="@string/stateTitle"
                 android:textSize="@dimen/normal_text" />
 
@@ -190,7 +190,7 @@
                 android:id="@+id/stateValue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom|center"
+                android:gravity="center"
                 android:layout_margin="@dimen/item_margin"
                 android:textSize="@dimen/normal_text" />
         </LinearLayout>
@@ -206,8 +206,8 @@
                 android:id="@+id/zipCodeTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:layout_margin="@dimen/item_margin"
+                android:gravity="center"
                 android:text="@string/zipCodeTitle"
                 android:textSize="@dimen/normal_text" />
 
@@ -215,8 +215,8 @@
                 android:id="@+id/zipCodeValue"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:layout_margin="@dimen/item_margin"
+                android:gravity="center"
                 android:inputType="phone"
                 android:maxLength="5"
                 android:textSize="@dimen/normal_text" />
@@ -233,8 +233,8 @@
                 android:id="@+id/phoneNumberTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:layout_margin="@dimen/item_margin"
+                android:gravity="center"
                 android:text="@string/phoneNumberTitle"
                 android:textSize="@dimen/normal_text" />
 
@@ -242,8 +242,8 @@
                 android:id="@+id/phoneNumberValue"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:layout_margin="@dimen/item_margin"
+                android:gravity="center"
                 android:inputType="phone"
                 android:maxLength="10"
                 android:textSize="@dimen/normal_text" />
@@ -258,13 +258,13 @@
 
             <ImageView
                 android:id="@+id/addImage"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="80dp"
+                android:layout_height="120dp"
                 android:layout_gravity="center"
                 android:layout_margin="@dimen/item_margin"
                 android:layout_weight="0.3"
                 android:gravity="center"
-                android:src="@drawable/ic_launcher" />
+                />
 
             <Button
                 android:id="@+id/addButton"
@@ -273,8 +273,10 @@
                 android:layout_gravity="center"
                 android:layout_margin="@dimen/item_margin"
                 android:layout_weight="0.7"
+                android:background="@drawable/blue_gradient"
                 android:gravity="center"
                 android:text="@string/addImageTitle"
+                android:textColor="@android:color/white"
                 android:textSize="@dimen/normal_text" />
         </LinearLayout>
 
@@ -292,8 +294,10 @@
                 android:layout_gravity="center"
                 android:layout_margin="@dimen/item_margin"
                 android:layout_weight="0.5"
+                android:background="@drawable/blue_gradient"
                 android:gravity="center"
                 android:text="@string/saveTitle"
+                android:textColor="@android:color/white"
                 android:textSize="@dimen/normal_text" />
 
             <Button
@@ -303,8 +307,10 @@
                 android:layout_gravity="center"
                 android:layout_margin="@dimen/item_margin"
                 android:layout_weight="0.5"
+                android:background="@drawable/blue_gradient"
                 android:gravity="center"
                 android:text="@string/cancelTitle"
+                android:textColor="@android:color/white"
                 android:textSize="@dimen/normal_text" />
         </LinearLayout>
     </RelativeLayout>

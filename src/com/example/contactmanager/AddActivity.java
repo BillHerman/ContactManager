@@ -1,42 +1,24 @@
 package com.example.contactmanager;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.util.ArrayList;
-
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.params.HttpConnectionParams;
-import org.apache.http.util.EntityUtils;
-import org.json.JSONArray;
-import org.json.JSONObject;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.CompressFormat;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.provider.MediaStore.Images.Media;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.View.OnLongClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
-import android.widget.TextView;
 
 public class AddActivity extends Activity {
 
@@ -45,7 +27,8 @@ public class AddActivity extends Activity {
 	Context context;
 	Contact contact = new Contact();
 	Bitmap avatar;
-
+	String strAvatarFilename = "avatar.jpg";
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -74,7 +57,15 @@ public class AddActivity extends Activity {
 		// save or exit
 		findViewById(R.id.saveButton).setOnClickListener(onClickListener);
 		findViewById(R.id.cancelButton).setOnClickListener(onClickListener);
-
+		
+		Uri imageUri = Uri.fromFile(new File(getFilesDir(),strAvatarFilename));
+		ImageView addImage = (ImageView) findViewById(R.id.addImage);
+		addImage.setImageDrawable(getResources().getDrawable(
+				R.drawable.visa));
+		addImage.setImageURI(imageUri);
+		
+		
+		
 	}
 
 	final OnClickListener onClickListener = new OnClickListener() {
@@ -131,7 +122,7 @@ public class AddActivity extends Activity {
 				if (!contact.isValidCity())
 					errorFound = SendError(errorFound, "City can not be blank.");
 				if (!contact.isValidState())
-					errorFound = SendError(errorFound, "State is not valid.");
+					errorFound = SendError(errorFound, "You must select a state code.");
 				if (!contact.isValidZipCode())
 					errorFound = SendError(errorFound,
 							"Zip Code must be five digits long.");
@@ -203,15 +194,12 @@ public class AddActivity extends Activity {
 		case TAKE_CAMERA_REQUEST:
 			if (resultCode == Activity.RESULT_OK) {
 				avatar = (Bitmap) data.getExtras().get("data");
-				String strAvatarFilename = "avatar.jpg";
 				
 				try {
 					OutputStream outputStream = openFileOutput(
 							strAvatarFilename, MODE_PRIVATE);
 					avatar.compress(CompressFormat.JPEG, 100, outputStream);
 
-				} catch (FileNotFoundException e) {
-					e.printStackTrace();
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
@@ -220,7 +208,7 @@ public class AddActivity extends Activity {
 
 				ImageView addImage = (ImageView) findViewById(R.id.addImage);
 				addImage.setImageDrawable(getResources().getDrawable(
-						R.drawable.camera));
+						R.drawable.visa));
 				addImage.setImageURI(imageUri);
 
 			}

@@ -1,18 +1,19 @@
 package com.example.contactmanager;
 
+import java.io.IOException;
+import java.io.OutputStream;
 import java.util.ArrayList;
 
-import android.net.Uri;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Bitmap.CompressFormat;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -23,14 +24,14 @@ import android.widget.ListView;
 
 public class ViewActivity extends Activity {
 
-	private static final String TAG = "log";
 	ArrayList<Contact> contacts = new ArrayList<Contact>();
 	static ContactList contactList;
 	ContactAdapter listAdapter;
 	SQLiteDatabase db;
 	Context context;
 	String searchString = "";
-
+	String strAvatarFilename = "avatar.jpg";
+	
 	@Override
 	protected void onResume() {
 		super.onResume();
@@ -105,6 +106,20 @@ public class ViewActivity extends Activity {
 		switch (item.getItemId()) {
 
 		case R.id.addItem:
+			
+			
+			Bitmap avatar = BitmapFactory.decodeResource(context.getResources(),
+                    R.drawable.personal);
+			
+			try {
+				OutputStream outputStream = openFileOutput(
+						strAvatarFilename, MODE_PRIVATE);
+				avatar.compress(CompressFormat.JPEG, 100, outputStream);
+
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			
 			startActivity(new Intent(this, AddActivity.class));
 			return true;
 		default:

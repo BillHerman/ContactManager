@@ -1,82 +1,95 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="horizontal"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin" >
 
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/item_margin"
+        android:contentDescription="@string/iconDescription"
+        android:src="@drawable/personal" />
+
     <LinearLayout
-        android:id="@+id/singleLayout"
+        android:id="@+id/textLayout"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true" >
+        android:layout_gravity="center"
+        android:orientation="vertical" >
 
-        <ImageView
-            android:id="@+id/icon"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/nameLayout"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="@dimen/item_margin"
-            android:contentDescription="@string/iconDescription"
-            android:src="@drawable/ic_launcher" />
+            android:orientation="horizontal" >
 
-        <TextView
-            android:id="@+id/lastName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="@dimen/item_margin"
-            android:contentDescription="@string/lastNameDescription"
-            android:textSize="@dimen/normal_text" />
+            <TextView
+                android:id="@+id/lastName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/item_margin"
+                android:contentDescription="@string/lastNameDescription"
+                android:textSize="@dimen/normal_text" />
 
-        <TextView
-            android:id="@+id/firstName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="@dimen/item_margin"
-            android:contentDescription="@string/firstNameDescription"
-            android:textSize="@dimen/normal_text" />
+            <TextView
+                android:id="@+id/firstName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/item_margin"
+                android:contentDescription="@string/firstNameDescription"
+                android:textSize="@dimen/normal_text" />
+        </LinearLayout>
 
         <TextView
             android:id="@+id/phoneNumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
             android:layout_margin="@dimen/item_margin"
             android:contentDescription="@string/phoneNumberDescription"
             android:textSize="@dimen/normal_text" />
 
-        <TextView
-            android:id="@+id/weatherStatus"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/weatherLayout"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="@dimen/item_margin"
-            android:contentDescription="@string/weatherStatusDescription"
-            android:textSize="@dimen/normal_text" />
+            android:orientation="horizontal" >
 
-        <TextView
-            android:id="@+id/weatherTemp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="@dimen/item_margin"
-            android:contentDescription="@string/weatherTempDescription"
-            android:textSize="@dimen/normal_text" />
+            <TextView
+                android:id="@+id/weatherStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/item_margin"
+                android:contentDescription="@string/weatherStatusDescription"
+                android:textSize="@dimen/normal_text" />
 
-        <TextView
-            android:id="@+id/weatherConstant"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="@dimen/item_margin"
-            android:contentDescription="@string/weatherConstantDescription"
-            android:text="@string/tempIndicator"
-            android:textSize="@dimen/normal_text"
-            android:visibility="invisible" />
+            <TextView
+                android:id="@+id/weatherTemp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/item_margin"
+                android:contentDescription="@string/weatherTempDescription"
+                android:textSize="@dimen/normal_text" />
+
+            <TextView
+                android:id="@+id/weatherConstant"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/item_margin"
+                android:contentDescription="@string/weatherConstantDescription"
+                android:text="@string/tempIndicator"
+                android:textSize="@dimen/normal_text"
+                android:visibility="invisible" />
+        </LinearLayout>
     </LinearLayout>
 
-</RelativeLayout>
+</LinearLayout>

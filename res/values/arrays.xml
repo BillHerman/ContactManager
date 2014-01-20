@@ -2,11 +2,12 @@
 <resources>
 
     <string-array name="genderArray">
+        <item>Unknown</item>
         <item>Male</item>
         <item>Female</item>
-        <item>Unknown</item>
     </string-array>
     <string-array name="stateArray">
+		<item>Select</item>
         <item>AL</item>
         <item>AK</item>
         <item>AZ</item>

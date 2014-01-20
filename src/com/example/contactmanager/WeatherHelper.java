@@ -1,10 +1,5 @@
 package com.example.contactmanager;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.lang.ref.WeakReference;
-import java.net.URL;
-
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -15,21 +10,13 @@ import org.apache.http.util.EntityUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import android.content.ContentValues;
-import android.content.res.Resources;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.BitmapFactory.Options;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
-import android.util.Log;
+import android.util.Log; 
 import android.view.View;
 import android.widget.TextView;
 
 	public class WeatherHelper extends
 			AsyncTask<Integer, Void, Integer> {
-	private static final String TAG = "log";
 		TextView textView1;
 		TextView textView2;
 		TextView textView3;
